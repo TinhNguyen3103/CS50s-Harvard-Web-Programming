@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Auctions{% endblock %}</title>
+
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!--Import materialize css-->
+        <link type="text/css" rel="stylesheet" href="{% static "auctions/css/materialize.css" %}"  media="screen,projection"/>
+
+        <!--Import custom css -->
+        <link href="{% static 'auctions/css/styles.css' %}" rel="stylesheet">
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <header>
+            {% include "auctions/includes/header.html" %}
+        </header>
+
+        <main>
+            <div class="container">
+                {% block body %}
+                {% endblock %}
+            </div>
+        </main>
+
+        {% include "auctions/includes/footer.html" %}
+
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="{% static "auctions/js/materialize.js" %}"></script>
+        <script type="text/javascript" src="{% static "auctions/js/init.js" %}"></script>
+
+    </body>
+</html>
